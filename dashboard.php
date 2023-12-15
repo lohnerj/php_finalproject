@@ -23,6 +23,8 @@ $is_admin = $_SESSION['is_admin'] ?? 0; // Check if the user is an admin
         <p>Welcome, regular user.</p>
     <?php endif; ?>
 
+    <a href="events.php">View Events</a>
+
     <form action="logout.php" method="post">
         <input type="submit" value="Sign Out">
     </form>
