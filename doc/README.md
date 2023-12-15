@@ -1,8 +1,8 @@
 # finalproject
  Contributions:
- Josh - 
- Amrutha -
- Nat - 
+ Josh - event/guest/task, database, User Authentification
+ Amrutha - Styling/Theme,Logic Layer
+ Nat - Admin, User Authentification, ERD
 
  User Credentials:
  -RegularJoe
