@@ -34,7 +34,7 @@ $events = $conn->query("SELECT events.*, users.username FROM events JOIN users O
         a {
             display: block;
             margin-top: 10px;
-            color: #fff; 
+            color: #001F3F; 
             text-decoration: none;
         }
 
