@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("si", $task_description, $task_id);
     $stmt->execute();
 
-    header("Location: events.php"); // Redirect to events page
+    header("Location: ../events.php"); // Redirect to events page
     exit();
 }
 
@@ -35,6 +35,6 @@ $task = $conn->query("SELECT * FROM tasks WHERE id = $task_id")->fetch_assoc();
         <textarea name="task_description" required><?php echo htmlspecialchars($task['task_description']); ?></textarea><br>
         <input type="submit" value="Update Task">
     </form>
-    <a href="events.php">Back to Events</a>
+    <a href="../events.php">Back to Events</a>
 </body>
 </html>

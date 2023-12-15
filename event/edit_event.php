@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssi", $title, $event_date, $event_time, $location, $description, $event_id);
     $stmt->execute();
 
-    header("Location: events.php"); // Redirect to events page
+    header("Location: ../events.php"); // Redirect to events page
     exit();
 }
 
@@ -48,6 +48,6 @@ $event = $result->fetch_assoc();
         <textarea name="description" placeholder="Description"><?php echo $event['description']; ?></textarea><br>
         <input type="submit" value="Update Event">
     </form>
-    <a href="dashboard.php" style="margin-bottom: 20px; display: inline-block;">Back to Dashboard</a>
+    <a href="../dashboard.php" style="margin-bottom: 20px; display: inline-block;">Back to Dashboard</a>
 </body>
 </html>

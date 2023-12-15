@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("is", $guest_id, $task_description);
     $stmt->execute();
 
-    header("Location: events.php"); // Redirect to events page
+    header("Location: ../events.php"); // Redirect to events page
     exit();
 }
 
@@ -34,6 +34,6 @@ $guest_id = $_GET['guest_id'] ?? 0;
         <textarea name="task_description" placeholder="Task Description" required></textarea><br>
         <input type="submit" value="Add Task">
     </form>
-    <a href="events.php">Back to Events</a>
+    <a href="../events.php">Back to Events</a>
 </body>
 </html>
