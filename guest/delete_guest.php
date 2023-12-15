@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -15,6 +15,6 @@ if ($guest_id > 0) {
     $stmt->execute();
 }
 
-header("Location: events.php"); // Redirect to events page
+header("Location: ../events.php"); 
 exit();
 ?>

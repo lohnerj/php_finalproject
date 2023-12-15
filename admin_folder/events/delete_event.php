@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../../db_connect.php'; // Adjust path as needed
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+if (!isset($_SESSION['user_id']) || !$_SESSION['is_admin']) {
+    header("Location: ../../login.php");
     exit();
 }
 
@@ -15,6 +15,6 @@ if ($event_id > 0) {
     $stmt->execute();
 }
 
-header("Location: events.php"); // Redirect to events page
+header("Location: all_events.php"); // Redirect to all events page
 exit();
 ?>

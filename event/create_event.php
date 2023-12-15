@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db_connect.php';
+include '../db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("isssss", $user_id, $title, $event_date, $event_time, $location, $description);
     $stmt->execute();
 
-    header("Location: events.php"); // Redirect to events page
+    header("Location: ../events.php"); 
     exit();
 }
 ?>
@@ -39,6 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <textarea name="description" placeholder="Description"></textarea><br>
         <input type="submit" value="Create Event">
     </form>
-    <a href="dashboard.php" style="margin-bottom: 20px; display: inline-block;">Back to Dashboard</a>
+    <a href="../dashboard.php" style="margin-bottom: 20px; display: inline-block;">Back to Dashboard</a>
 </body>
 </html>
