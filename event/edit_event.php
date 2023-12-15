@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-
 $event_id = $_GET['id'] ?? 0;
 $stmt = $conn->prepare("SELECT * FROM events WHERE id = ?");
 $stmt->bind_param("i", $event_id);
@@ -33,9 +32,53 @@ $event = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Event</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #00B289;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #001F3F;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #808080;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Event</h1>
@@ -48,6 +91,9 @@ $event = $result->fetch_assoc();
         <textarea name="description" placeholder="Description"><?php echo $event['description']; ?></textarea><br>
         <input type="submit" value="Update Event">
     </form>
-    <a href="../dashboard.php" style="margin-bottom: 20px; display: inline-block;">Back to Dashboard</a>
+    <a href="../dashboard.php">Back to Dashboard</a>
 </body>
 </html>
+
+
+

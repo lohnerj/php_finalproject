@@ -27,9 +27,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Event</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000; 
+            background-color: #00B289;
+        }
+
+        h1 {
+            background-color: #001F3F; 
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #808080; 
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Event</h1>

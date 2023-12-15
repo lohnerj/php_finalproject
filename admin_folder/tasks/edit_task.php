@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("si", $task_description, $task_id);
     $stmt->execute();
 
-    header("Location: all_tasks.php"); // Redirect to all tasks page
+    header("Location: all_tasks.php");
     exit();
 }
 
@@ -27,6 +27,48 @@ $task = $conn->query("SELECT * FROM tasks WHERE id = $task_id")->fetch_assoc();
 <html>
 <head>
     <title>Edit Task</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000;
+            background-color: #00B289;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #001F3F;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #808080;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Task</h1>

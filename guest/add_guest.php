@@ -1,9 +1,9 @@
 <?php
 session_start();
-include '../db_connect.php';
+include 'db_connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("issss", $event_id, $name, $email, $phone, $rsvp);
     $stmt->execute();
 
-    header("Location: ../events.php"); // Redirect to events page
+    header("Location: events.php"); // Redirect to events page
     exit();
 }
 
@@ -26,12 +26,52 @@ $event_id = $_GET['event_id'] ?? 0;
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Guest</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000; 
+            background-color: #00B289; 
+        }
+
+        header {
+            background-color: #001F3F; 
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #808080; 
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            color: #FFF; 
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Add Guest</h1>
+    <header>
+        <h1>Add Guest</h1>
+    </header>
+
     <form action="add_guest.php" method="post">
         <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
         <input type="text" name="name" placeholder="Name" required><br>
@@ -44,6 +84,9 @@ $event_id = $_GET['event_id'] ?? 0;
         </select><br>
         <input type="submit" value="Add Guest">
     </form>
-    <a href="../events.php">Back to Events</a>
+
+    <a href="events.php">Back to Events</a>
 </body>
 </html>
+
+

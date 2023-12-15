@@ -28,9 +28,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Event</title>
+    <style>
+ 
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000; /* Font color set to black */
+            background-color: #00B289; 
+        }
+
+        h1 {
+            background-color: #001F3F; 
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #808080; 
+            color: #000; 
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #fff; 
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Create Event</h1>
