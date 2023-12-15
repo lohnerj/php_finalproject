@@ -22,9 +22,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create User</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #00B289;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #001F3F;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #808080;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #fff; 
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Create User</h1>
