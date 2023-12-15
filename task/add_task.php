@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("is", $guest_id, $task_description);
     $stmt->execute();
 
-    header("Location: ../events.php"); // Redirect to events page
+    header("Location: ../events.php"); 
     exit();
 }
 

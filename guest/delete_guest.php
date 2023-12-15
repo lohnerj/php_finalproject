@@ -15,6 +15,6 @@ if ($guest_id > 0) {
     $stmt->execute();
 }
 
-header("Location: ../events.php"); // Redirect to events page
+header("Location: ../events.php"); 
 exit();
 ?>

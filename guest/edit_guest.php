@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssi", $name, $email, $phone, $rsvp, $guest_id);
     $stmt->execute();
 
-    header("Location: ../events.php"); // Redirect to events page
+    header("Location: ../events.php"); 
     exit();
 }
 

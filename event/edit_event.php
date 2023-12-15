@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssi", $title, $event_date, $event_time, $location, $description, $event_id);
     $stmt->execute();
 
-    header("Location: ../events.php"); // Redirect to events page
+    header("Location: ../events.php"); 
     exit();
 }
 
-// Fetch existing event data
+
 $event_id = $_GET['id'] ?? 0;
 $stmt = $conn->prepare("SELECT * FROM events WHERE id = ?");
 $stmt->bind_param("i", $event_id);

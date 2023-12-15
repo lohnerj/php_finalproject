@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$is_admin = $_SESSION['is_admin'] ?? 0; // Check if the user is an admin
+$is_admin = $_SESSION['is_admin'] ?? 0; 
 
 ?>
 
@@ -19,7 +19,7 @@ $is_admin = $_SESSION['is_admin'] ?? 0; // Check if the user is an admin
     <?php if ($is_admin == 1): ?>
         <p>You are an admin.</p>
         
-        <!-- Admin specific options -->
+        
         <a href="admin_folder/users/all_users.php">View All Users</a><br>
         <a href="admin_folder/events/all_events.php">View All Events</a><br>
         <a href="admin_folder/guest_lists/all_guestlists.php">View All Guest Lists</a><br>

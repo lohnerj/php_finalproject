@@ -15,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
-            $_SESSION['is_admin'] = $row['is_admin']; // Store the is_admin flag in session
+            $_SESSION['is_admin'] = $row['is_admin']; 
 
-            header("Location: dashboard.php"); // Redirect to dashboard
+            header("Location: dashboard.php"); 
             exit();
         }
     }

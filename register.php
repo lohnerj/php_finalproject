@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssi", $username, $password, $is_admin);
     $stmt->execute();
 
-    header("Location: login.php"); // Redirect to login page
+    header("Location: login.php");
     exit();
 }
 ?>
